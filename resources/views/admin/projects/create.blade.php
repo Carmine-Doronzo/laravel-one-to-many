@@ -15,6 +15,19 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="type_id" class="form-label">Tipologia di progetto</label>
+                    <select class="form-control" name="type_id" id="type_id">
+
+                        <option value="">Seleziona Tipologia</option>
+                        @foreach ($types as $type)
+                            <option value="{{$type->id}}">{{$type->name}}</option>
+                        @endforeach
+
+                    </select>
+                </div>
+
+
+                <div class="mb-3">
                     <label for="github_url" class="form-label">Url github</label>
                     <input type="text" name="github_url" class="form-control" id="github_url"
                         placeholder="inserisci link alla repository" value="{{ old('github_url') }}">
