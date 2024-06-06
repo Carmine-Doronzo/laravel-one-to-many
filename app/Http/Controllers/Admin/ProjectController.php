@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Models\Type;
+use App\Http\Requests\StoreProjectRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 class ProjectController extends Controller
@@ -30,15 +31,15 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProjectRequest $request)
     {
-        $request->validate([
-            'name'=> 'required|min:10',
-            'description' => 'nullable|max:10000',
-            'github_url'=> 'required|max:200',
-        ]);
+        // $request->validate([
+        //     'name'=> 'required|min:10',
+        //     'description' => 'nullable|max:10000',
+        //     'github_url'=> 'required|max:200',
+        // ]);
         
-
+        $form_data = $request->validated();
         $form_data = $request->all();
         $slug = Str::slug($form_data['name']);
 
