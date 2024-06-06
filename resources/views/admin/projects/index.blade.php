@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container py-4">
-    <table class="table table-dark">
+    <table class="table table-dark ">
         <thead>
            
             <tr>
