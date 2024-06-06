@@ -25,7 +25,7 @@ class UpdateProjectRequest extends FormRequest
             'name'=> 'required|min:10',
             'description' => 'nullable|max:10000',
             'github_url'=> 'required|max:200',
-            'type_id' => 'nullable|exists:types_id'
+            'type_id' => 'nullable|exists:types,id'
         ];
     }
 }

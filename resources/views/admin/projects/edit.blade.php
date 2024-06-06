@@ -1,9 +1,9 @@
 @extends('layouts.app')
-
+@section('title',"Edit: {$project->name}")
 @section('content')
-    <h1>questa è la edit</h1>
+    
     <section>
-        <div class="container">
+        <div class="container py-4">
             <form action="{{ route('admin.projects.update',$project) }}" method="POST">
                 @csrf
                 @method('PUT')
@@ -36,11 +36,24 @@
 
                 <div class="mb-3">
                     <label for="description" class="form-label">Descrizione</label>
-                    <textarea class="form-control" name="description" id="description" rows="3" placeholder="Descrizione Repository">{{ old('description',$project->description) }}</textarea>
+                    <textarea class="form-control" name="description" id="description" rows="10" placeholder="Descrizione Repository">{{ old('description',$project->description) }}</textarea>
                 </div>
 
                 <button class="btn btn-primary">Modifica repository</button>
             </form>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error )
+
+                    <li>
+                        {{$error}}
+                    </li>
+                        
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         </div>
     </section>
 @endsection

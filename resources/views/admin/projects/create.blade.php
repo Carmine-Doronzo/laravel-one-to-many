@@ -1,9 +1,9 @@
 @extends('layouts.app')
-
+@section('title','Upload a New Repository')
 @section('content')
-    <h1>questa è la create</h1>
+    
     <section>
-        <div class="container">
+        <div class="container py-4">
             <form action="{{ route('admin.projects.store') }}" method="POST">
                 @csrf
 
@@ -35,11 +35,24 @@
 
                 <div class="mb-3">
                     <label for="description" class="form-label">Descrizione</label>
-                    <textarea class="form-control" name="description" id="description" rows="3" placeholder="Descrizione Repository">{{ old('description') }}</textarea>
+                    <textarea class="form-control" name="description" id="description" rows="10" placeholder="Descrizione Repository">{{ old('description') }}</textarea>
                 </div>
 
                 <button class="btn btn-primary">Carica repository</button>
             </form>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error )
+
+                    <li>
+                        {{$error}}
+                    </li>
+                        
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         </div>
     </section>
 @endsection
