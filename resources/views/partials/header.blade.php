@@ -42,6 +42,8 @@
                         <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profile')}}</a>
                         <a class="dropdown-item" href="{{ route('admin.projects.create') }}">{{__('Upload New Repo')}}</a>
                         <a class="dropdown-item" href="{{ route('admin.projects.index') }}">{{__('List of Repo')}}</a>
+                        <a class="dropdown-item" href="{{ route('admin.types.index') }}">{{__('List of Type')}}</a>
+                        <a class="dropdown-item" href="{{ route('admin.types.create') }}">{{__('Upload a new Type')}}</a>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}

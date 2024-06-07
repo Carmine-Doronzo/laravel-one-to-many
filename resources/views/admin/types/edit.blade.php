@@ -21,7 +21,7 @@
                     <textarea class="form-control" name="description" id="description" rows="10" placeholder="Descrizione Repository">{{ old('description',$type->description) }}</textarea>
                 </div>
 
-                <button class="btn btn-primary">Modifica repository</button>
+                <button class="btn btn-primary">Modify a Type</button>
             </form>
             @if ($errors->any())
             <div class="alert alert-danger">
